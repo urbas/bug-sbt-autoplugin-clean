@@ -19,7 +19,6 @@ object CleanAutoPluginBug extends AutoPlugin {
         testFile.value.getParentFile.mkdirs()
         IO.write(testFile.value, "Hello world")
       },
-      cleanFiles <+= testFile,
       cleanFiles += testFile.value,
       clean := {
         val _ = clean.value
